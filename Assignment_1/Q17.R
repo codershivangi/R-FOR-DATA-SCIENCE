@@ -1,0 +1,10 @@
+yt<-vec6*rep(vec7,times=c(3,3))
+yt
+#method1
+mi<-(length(yt)%/%2)+(-1:2)
+mi
+yt[mi]<-c(-0.1,-100)
+yt
+#method2
+mh<-replace(yt,2:5,rep(c(-0.1,-100),2))
+mh
