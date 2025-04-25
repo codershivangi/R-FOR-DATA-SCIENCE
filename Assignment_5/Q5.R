@@ -1,0 +1,1 @@
+ggplot(df,aes(x,y))+geom_line()+ggtitle("line plot")+xlab("x axis")+ylab("y axis")
