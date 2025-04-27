@@ -1,14 +1,14 @@
 library(ggplot2)
 
-data <- data.frame( x = 1:10, y = c(2, 5, 3, 6, 8, 7, 10, 12, 11, 9))
+data <- data.frame(  x = 1:6,  y = c(2, 4, 3, 6, 5, 7),  group = c("A", "C", "B", "B", "A", "C"))
 
-data$highlight <- ifelse(data$y > 8, "High", "Normal")
-print(data)
+manual_colors <- c("A" = "red", "B" = "blue", "C" = "green")
 
-p <- ggplot(data, aes(x = x, y = y, color = highlight)) +
+p <- ggplot(data, aes(x = x, y = y, color = group)) +
+  
   geom_point(size = 4) +
-  scale_color_manual(values = c("High" = "red", "Normal" = "black")) +
-  ggtitle("Highlight Points Based on Logical Condition") +
+  scale_color_manual(name = "Group Type",  values = manual_colors) +
+  
+  ggtitle("Plot with Manually Added Legend") +
   theme_minimal()
-
 print(p)
